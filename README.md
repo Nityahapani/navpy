@@ -11,7 +11,7 @@ pip install navpy
 Or from source:
 
 ```bash
-git clone https://github.com/yourname/navpy
+git clone https://github.com/Nityahapani/navpy
 cd navpy
 pip install -e .
 ```
@@ -480,7 +480,7 @@ Three workflows are included:
 
 | Workflow         | Trigger                  | What it does                             |
 |------------------|--------------------------|------------------------------------------|
-| `ci.yml`         | Every push + PR to main  | Tests (Py 3.8–3.12), lint, build check   |
+| `ci.yml`         | Every push + PR to main  | Tests (Py 3.11–3.12), lint, build check   |
 | `publish.yml`    | Tag push (`v*.*.*`)      | Test → Build → TestPyPI → PyPI → Release |
 | `live_tests.yml` | Nightly 2 AM UTC         | Live API integration tests               |
 
