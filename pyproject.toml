@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "navpy"
+version = "1.0.0"
+description = "Fetch, analyse, and benchmark Indian mutual fund NAV data from AMFI"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["mutual fund", "NAV", "AMFI", "India", "finance", "investing"]
+dependencies = [
+    "requests>=2.28.0",
+    "pandas>=1.5.0",
+    "numpy>=1.23.0",
+    "scipy>=1.9.0",
+    "yfinance>=0.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-timeout>=2.1",
+    "flake8>=6.0",
+    "build>=0.10",
+    "twine>=4.0",
+]
+
+[project.scripts]
+navpy = "navpy.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["navpy*"]
+
+[tool.pytest.ini_options]
+markers = [
+    "live: marks tests that require a live network connection (deselect with -m 'not live')",
+]
